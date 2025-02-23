@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-
 const Log = ({ turns }) => {
   return (
     <ol id="log">

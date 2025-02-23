@@ -8,7 +8,7 @@ const Player = ({ initialName, symbol, isActive, onChangeName }) => {
   const handleEditClick = () => {
     setIsEditing((editing) => !editing); //  Always give latest updated state
     // setIsEditing(!isEditing) // => schedules a state update to true (may/maynot give updated state)
-    if(isEditing) {
+    if (isEditing) {
       onChangeName(symbol, playerName);
     }
   };
