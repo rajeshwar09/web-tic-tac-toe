@@ -1,13 +1,16 @@
 import { useState } from "react";
 
 /* eslint-disable react/prop-types */
-const Player = ({ initialName, symbol, isActive }) => {
+const Player = ({ initialName, symbol, isActive, onChangeName }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [playerName, setPlayerName] = useState(initialName);
 
   const handleEditClick = () => {
     setIsEditing((editing) => !editing); //  Always give latest updated state
     // setIsEditing(!isEditing) // => schedules a state update to true (may/maynot give updated state)
+    if(isEditing) {
+      onChangeName(symbol, playerName);
+    }
   };
 
   const handleOnChange = (event) => {
