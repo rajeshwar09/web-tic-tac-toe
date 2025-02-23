@@ -1,11 +1,7 @@
 /* eslint-disable react/prop-types */
 
-const initialGameboard = [
-  [null, null, null],
-  [null, null, null],
-  [null, null, null],
-];
-const Gameboard = ({ onSelectSquare, turns }) => {
+
+const Gameboard = ({ onSelectSquare, board }) => {
   // const [gameBoard, setGameBoard] = useState(initialGameboard);
 
   // const handleSelectSquare = (rowIndex, colIndex) => {
@@ -19,17 +15,11 @@ const Gameboard = ({ onSelectSquare, turns }) => {
   //   });
   //   onSelectSquare();
   // };
-  let gameBoard = initialGameboard;
-
-  for (const turn of turns) {
-    const { square, player } = turn;
-    const { row, col } = square;
-    gameBoard[row][col] = player;
-  }
+  
 
   return (
     <ol id="game-board">
-      {gameBoard.map((row, rowIndex) => (
+      {board.map((row, rowIndex) => (
         <li key={rowIndex}>
           <ol>
             {row.map((playerSymbol, colIndex) => (
